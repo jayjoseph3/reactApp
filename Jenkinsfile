@@ -12,11 +12,12 @@ pipeline {
                 sh 'npm install' 
             }
         }
+     }
      stages {
         stage('Test') {
             steps {
                 sh 'node --version'
             }
-
+       }
     }
 }
