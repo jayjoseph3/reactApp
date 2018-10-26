@@ -4,13 +4,13 @@ pipeline {
       registry ="jayjoseph3/reactapp"
 	registryCredential ='dockerhub'
     }
-    agent any // {
-//   agent  {
-       // docker {
-        //    image 'node:7-alpine' 
-        //    args '-p 3001:3001' 
-      //  }
-  //  }
+//    agent any  {
+   agent  {
+        docker {
+            image 'node:7-alpine' 
+            args '-p 3001:3001' 
+        }
+    }
     tools{
      nodejs 'nodejs'
      }
