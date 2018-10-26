@@ -1,0 +1,8 @@
+#items not needed to be in a Docker image
+Dockerfile
+.dockerignore
+npm-debug.log
+node_modules
+package.json.bak
+
+#artifacts that will be built during image creation
