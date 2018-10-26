@@ -18,7 +18,7 @@ pipeline {
                 sh 'npm install' 
             }
         }
-        stage('Test') {
+        stage('Test Version') {
             steps {
                echo ' Your test steps'
                 sh 'node --version'
