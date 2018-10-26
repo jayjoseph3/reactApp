@@ -11,6 +11,9 @@ pipeline {
         //    args '-p 3001:3001' 
       //  }
   //  }
+    tools{
+     nodejs 'nodejs'
+     }
     stages {
         stage('Build') { 
             steps {
