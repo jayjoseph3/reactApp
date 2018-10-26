@@ -1,7 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'node:jayjoseph3/reactapp' 
+            //image 'node:jayjoseph3/reactapp' 
+            image 'node:7-alpine' 
             args '-p 3001:3001' 
         }
     }
@@ -11,5 +12,11 @@ pipeline {
                 sh 'npm install' 
             }
         }
+     stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+
     }
 }
