@@ -4,5 +4,6 @@ Dockerfile
 npm-debug.log
 node_modules
 package.json.bak
+README
 
 #artifacts that will be built during image creation
