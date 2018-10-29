@@ -9,7 +9,7 @@ node {
 		sh 'docker -v'
 		sh 'printenv'
 		}
-		stage('Deploy')
+		stage('Deploy'){
 		if(env.BRANCH_NAME == 'master'){
 		sh 'docker build -t react-bae-demo --no cache.'
 		sh 'docker tag react-bae-demo localhost:3001/react-app'
