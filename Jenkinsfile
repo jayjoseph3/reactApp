@@ -1,5 +1,5 @@
 node {
-	try{
+//	try{
 		stage('Checkout') {
 			checkout scm
 		}
@@ -27,7 +27,7 @@ node {
 	}
                
 }
-catch (err){
-	throw err
-	}
+//catch (err){
+//	throw err
+//	}
 }
