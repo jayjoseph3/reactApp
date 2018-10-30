@@ -18,8 +18,12 @@ node {
 		}
 		stage('Test'){
 		echo 'test'
-		sh 'docker run -d react-joe-demo -p 3001:3001'
+		sh 'docker run  -p 3001:3001 -d react-joe-demo'
 		}
+                stage('Clean up'){
+		echo 'clean'
+		sh 'docker stop react-joe-demo '
+		sh 'docker rmi react-joe-demo -f'
 	}
                
 }
