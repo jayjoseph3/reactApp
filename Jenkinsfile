@@ -18,7 +18,7 @@ node {
 		}
 		stage('Test'){
 		echo 'test'
-		sh 'docker run --name react-joe-demo -p 3001:3001'
+		sh 'docker run -d react-joe-demo -p 3001:3001'
 		}
 	}
                
