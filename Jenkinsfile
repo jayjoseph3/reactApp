@@ -29,7 +29,7 @@ node {
 		echo 'push image to azr'
 //                withCredentials([azureServicePrincipal('principal-credentials-id')]) {
            //   sh 'az acr login --name=myJoeAcr '
-                sh 'docker login  -u ${ACR_ID} -p ${ACR_PASSWORD} $ACR_LOGINSERVER'
+                sh 'docker login  -u ${ACR_ID}  $ACR_LOGINSERVER'
         //        sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
 //                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} '
                   //sh ' az acr login --name ${ACR_ID} --password ${ACR_PASSWORD}' 
