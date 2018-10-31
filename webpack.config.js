@@ -6,7 +6,8 @@ module.exports ={
 	},
 	devServer:{
 		inline:false,
-               host:'192.168.224.130',
+//               host:'192.168.224.130',
+               host:'0.0.0.0',
 //               host:'192.168.224.137',
 		port:3001
        },

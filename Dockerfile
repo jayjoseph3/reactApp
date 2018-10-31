@@ -15,7 +15,8 @@ COPY package.json package-lock.json
 COPY . . 
 
 RUN npm install
-
+#RUN apt-get update && apt-get install -y \
+#vim
 #make port available to outside
 EXPOSE 3001
 
