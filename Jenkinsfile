@@ -28,7 +28,7 @@ node {
                 stage('Push image'){
 		echo 'push image to azr'
            //   sh 'az acr login --name=myJoeAcr '
-              //  sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
+                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
 //                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} --password-stdin ${ACR_PASSWORD}'
 		sh 'docker tag react-joe-demo myJoeAcr.azurecr.io/bae-demo:v1' 
 //		sh 'docker push myJoeAcr.azurecr.io/bae-demo:v1'
