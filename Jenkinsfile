@@ -30,8 +30,8 @@ node {
                 stage('Push image'){
 		echo 'push image to azr'
                 sh 'docker login  myjoeacr.azurecr.io -u myJoeAcr -p ${ACR_PASSWORD}'
-		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v4' 
-		sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v4'
+		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v5' 
+		sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v5'
 		}
                 stage('k8s'){
 		echo 'test kubectl')
