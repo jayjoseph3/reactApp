@@ -36,7 +36,7 @@ node {
                 stage('k8s'){
 		echo ' kubectl'
 		sh 'kubectl get pods' 
-  //            } 
+              } 
         }
 
 //catch (err){
