@@ -33,7 +33,9 @@ node {
              // sh 'az acr login --name myJoeAcr '
         //        sh 'docker login  -u ${ACR_ID}  $ACR_LOGINSERVER'
                 //sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
-                sh 'docker login  myjoeacr.azurecr.io -u myJoeAcr -p ${ACR_PASSWORD}'
+                sh 'docker login  myjoeacr.azurecr.io -u myJoeAcr --password-stdin ${ACR_PASSWORD}'
+		sh 'docker tag react-joe-demo myJoeAcr.azurecr.io/bae-joe-demo:v1' 
+		sh 'docker push myJoeacr.azurecr.io/bae-joe-demo:v1'
 //                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} '
                   //sh ' az acr login --name ${ACR_ID} --password ${ACR_PASSWORD}' 
  //                 sh ' az  login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
@@ -43,8 +45,6 @@ node {
 		
 //                sh 'docker login  -u ${ACR_ID} --password-stdin ${ACR_PASSWORD} ${ACR_LOGINSERVER}'
 //                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} --password ${ACR_PASSWORD}'
-//ok		sh 'docker tag react-joe-demo myJoeAcr.azurecr.io/bae-demo:v1' 
-//		sh 'docker push myJoeAcr.azurecr.io/bae-demo:v1'
 		}
   //            } 
         }
