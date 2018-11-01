@@ -32,7 +32,8 @@ node {
 //                withCredentials([azureServicePrincipal('principal-credentials-id')]) {
              // sh 'az acr login --name myJoeAcr '
         //        sh 'docker login  -u ${ACR_ID}  $ACR_LOGINSERVER'
-                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
+                //sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
+                sh 'docker login  myjoeacr.azurecr.io -u myJoeAcr -p ${ACR_PASSWORD}'
 //                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} '
                   //sh ' az acr login --name ${ACR_ID} --password ${ACR_PASSWORD}' 
  //                 sh ' az  login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
