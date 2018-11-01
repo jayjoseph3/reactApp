@@ -34,7 +34,7 @@ node {
 		sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v5'
 		}
                 stage('k8s'){
-		echo 'test kubectl')
+		echo ' kubectl'
 		sh 'kubectl get pods' 
   //            } 
         }
