@@ -8,7 +8,7 @@ node {
 		stage('Environment'){
 		sh 'git --version'
 		echo "Branch: ${env.BRANCH_NAME}"
-		sh 'docker -v'
+//		sh 'docker -v'
 		sh 'printenv'
 		}
 		stage('Deploy'){
@@ -27,16 +27,27 @@ node {
 	//	sh 'docker stop react-joe-demo '
 	//	sh 'docker rmi react-joe-demo -f'
          //	}
-                stage('Push image'){
-		echo 'push image to azr'
+
+                stage(' login'){
+		echo 'login to azr'
                 sh 'docker login  myjoeacr.azurecr.io -u myJoeAcr -p ${ACR_PASSWORD}'
-		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v5' 
+		sh 'docker -v'
+               }
+
+                stage('build'){
+		echo 'build image in azr'
+		sh 'docker build -t react-joe-demo .'
+                }
+
+                stage('push to reg acr'){
+		echo 'push image to azr'
         	sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v5'
+		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v5' 
 		}
-                stage('k8s'){
-		echo ' kubectl'
-		sh 'kubectl get pods' 
-              } 
+                //stage('k8s'){
+		//echo ' kubectl'
+		//sh 'kubectl get pods' 
+              //} 
         }
 
 //catch (err){
