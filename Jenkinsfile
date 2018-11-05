@@ -36,14 +36,15 @@ node {
 
                 stage('build'){
 		echo 'build image in azr'
-		sh 'docker build -t react-joe-demo .'
+		//sh 'docker build -t react-joe-demo .'
+		sh 'docker build -t  myjoeacr.azurecr.io/react-joe-demo .'
                 }
 
                 stage('push to reg acr'){
 		echo 'push image to azr'
-        	sh 'docker push  react-joe-demo '
-		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v5' 
-        	sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v5'
+        	sh 'docker push  myjoeacr.azurecr.io/react-joe-demo'
+		sh 'docker tag  myjoeacr.azurecr.io/react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:latest' 
+        	sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:latest'
 		}
                 //stage('k8s'){
 		//echo ' kubectl'
