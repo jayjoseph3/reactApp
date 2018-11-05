@@ -41,6 +41,7 @@ node {
 
                 stage('push to reg acr'){
 		echo 'push image to azr'
+        	sh 'docker push  react-joe-demo '
 		sh 'docker tag react-joe-demo myjoeacr.azurecr.io/bae-joe-demo:v5' 
         	sh 'docker push myjoeacr.azurecr.io/bae-joe-demo:v5'
 		}
