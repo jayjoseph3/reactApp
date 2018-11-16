@@ -46,10 +46,16 @@ node {
 		sh 'docker tag  myjoeacr.azurecr.io/react-joe-demo1 myjoeacr.azurecr.io/bae-joe-demo1:latest' 
         	sh 'docker push myjoeacr.azurecr.io/bae-joe-demo1:latest'
 		}
-                //stage('k8s'){
-		//echo ' kubectl'
-		//sh 'kubectl get pods' 
-              //} 
+                stage('remove vm'){
+		echo 'remove image '
+		sh 'docker rmi -f myjoeacr.azurecr.io/react-joe-demo1'
+                }
+                stage(' deploy to docker'){
+		echo ' Deploy to docker '
+		sh 'docker pull myjoeacr.azurecr.io/react-joe-demo1' 
+		sh 'docker run  -p 3001:3001 -d  myjoeacr.azurecr.io/react-joe-demo1'
+              } 
+              //  stage(' deploy to k8s'){
         }
 
 //catch (err){
